@@ -1,70 +1,134 @@
-# Getting Started with Create React App
+# **💪 HW6 | React Intro - Integration**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## **🕒 DURACIÓN ESTIMADA**
 
-## Available Scripts
+3 horas
 
-In the project directory, you can run:
+</br >
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<div align="center">
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## **💻 RICK AND MORTY APP 💻**
 
-### `npm test`
+</div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## **📝 INTRO**
 
-### `npm run build`
+En esta homework vamos a crear nuestro proyecto de **Rick and Morty**. Comenzaremos construyendo nuestros primeros componentes: **card**, **cards** y **searchBar**.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> [**Nota**]: todos los componentes que hagamos en esta homework son **`puros`**, por lo tanto, ninguno tiene estado, simplemente reciben datos por props. No te preocupes por el estilo de los componentes, en la siguiente homework vamos a dárselos.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+</br >
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## **📋 INSTRUCCIONES**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## **🚀 PARTE UNO 🚀**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### **👩‍💻 EJERCICIO 1**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Tu primer paso será ejecutar el comando **`npm install`** para instalar todas las dependencias dentro de esta homework.
 
-## Learn More
+En el archivo **`App.js`** ya hay importado 3 componentes: **Card**, **Cards** y **SearchBar**. Estos componentes reciben propiedades y están siendo renderizados en nuestra aplicación.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br />
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+### **👩‍💻 EJERCICIO 2 | Card**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Dirígete al componente **`Card`** y renderiza las siguientes propiedades de los personajes:
 
-### Analyzing the Bundle Size
+-  **name**: nombre.
+-  **status**: status.
+-  **species**: especie.
+-  **gender**: género.
+-  **origin**: origen (ten en cuenta que el nombre del origen viene dentro de otra propiedad llamada **`name`**).
+-  **image**: imagen.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Además, cuando el usuario haga click en la **X** de "cerrar", debe ejecutarse una función que también viene como props llamada **onClose**.
 
-### Making a Progressive Web App
+> [**NOTA**]: por el momento, toda la información de los personajes la vamos a obtener a partir del archivo [**`data.js`**](./src//data.js)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<img src="./img/characterCard.png" height="250px">
 
-### Advanced Configuration
+<br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+### **👩‍💻 EJERCICIO 3 | Cards**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Utilizaremos este componente para renderizar muchos componentes **`Card`**. En otras palabras, este componente será el "_contenedor_" de todas las Cards.
 
-### `npm run build` fails to minify
+Lo primero que debes hacer es recibir la propiedad **`characters`** mediante las props. Esta propiedad es una arreglo con todos tus personajes. Por cada uno de ellos deberás renderizar un componente **`Card`** pasándole todas las propiedades que ya mencionamos en el ejercicio anterior.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> [**NOTA**]: agrega una propiedad llamada **`key`** y que sea igual al ID del personaje.
+
+> [**NOTA**]: puedes guiarte con la [**`documentación de React`**](https://es.reactjs.org/docs/lists-and-keys.html#rendering-multiple-components) para realizar este ejercicio.
+
+<img src="./img/Cards.png" height="250px">
+
+<br />
+
+---
+
+### **👩‍💻 EJERCICIO 4 | SearchBar**
+
+Este componente nos permitirá buscar y agregar nuevos personajes a nuestra aplicación.
+
+Recibe por props una función **`onSearch`**. La función **`onSearch`** se debe ejecutar cuando se haga click en el botón **`Agregar`**.
+
+<img src="./img/SearchBar.png" height="50px">
+
+<br />
+
+---
+
+## **🚀 PARTE DOS 🚀**
+
+<br />
+
+### **¡Listo! Es hora de crear nuestra app...**
+
+¿Ya completaste los puntos anteriores y todo funciona? ¡Perfecto! Ya podemos comenzar a crear nuestra propia app:
+
+1. Dirígete a un nuevo directorio desde tu terminal (por ejemplo, tu escritorio). Allí es dónde crearás tu aplicación.
+
+2. Ahora utiliza **_`CRA`_** (create-react-app) mediante **npx** para crear una nueva app de React:
+
+```bash
+npx create-react-app rick_and_morty
+```
+
+> [**NOTA**]: para el nombre de tu app no puedes usar mayúsculas ni el símbolo "&".
+
+Al término del proceso, podrás ver que en tu directorio se creó una nueva carpeta llamada "rick_and_morty". Abre esta carpeta con tu Visual Studio Code. Allí encontrarás algo como esto:
+
+<img src="./img/cra_01.png" height="200px">
+
+3. Dentro de esta nueva carpeta ejecuta:
+
+```bash
+    npm start
+```
+
+> [**NOTA**]: si aún tenemos corriendo el server local de la homework Integration Parte 1, vamos a obtener un error debido a que el puerto predeterminado (3000) está ocupado. Podemos elegir utilizar otro puerto, o terminar el proceso anterior y luego reintentarlo.
+
+Esperamos que se "levante" el servidor local y luego veremos algo así:
+
+<img src="./img/cra_02.gif" height="360px">
+
+<br />
+
+---
+
+Ahora simplemente debes seguir estos pasos:
+
+1. Reemplaza la carpeta **`src`** de tu nuevo proyecto por la que tienes en esta carpeta ([**src**](./src/)).
+
+2. Comprueba que en el navegador deberías ver los cambios.
