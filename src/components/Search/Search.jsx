@@ -9,14 +9,14 @@ export default function Search({onSearch}) {
   }
   function handleSubmit(e){
     e.preventDefault()
-    e.target.value = '';
-    return alert('ok!')
+    e.target.value = ''
   }
   return (
-    <div>
+    <div className={t.container}>
       <form onSubmit={handleSubmit}>
-        <input className={t.inpt}  type='search' placeholder='Escribe un id...' name='search' onChange={handleChange}/>
-        <button type='submit' className={t.bttn} onClick={()=>{onSearch(id)}}>AGREGAR</button>
+        <label className={t.bord}></label>
+        <input className={t.inpt}  type='number' placeholder='Escribe un id...' name='search' onChange={handleChange}/>
+        <button type='submit' className={t.bttn} onClick={()=>{onSearch(id)}}>🔍</button>
       </form>
     </div>
   )

@@ -1,0 +1,81 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap:wrap;
+  background-image:url('./fondo-login.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.form{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding:50px;
+  margin-top:10%;
+  border-radius:20px;
+  background-color: rgba(0, 0, 0, 0.819);
+  box-shadow: 1px 1px 30px rgba(238, 234, 234, 0.918);
+  border:1px solid rgba(238, 234, 234, 0.575);
+}
+
+.inpt{
+  width:90%;
+  background-color: rgba(52, 52, 52, 0.666);
+  color:white;
+  padding:8px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 15px rgba(238, 234, 234, 0.575);
+  border:none;
+}
+
+.inpt:focus{
+  background-color: rgba(52, 52, 52, 0.666);
+  border:1px solid rgba(47, 255, 0, 0.593);
+  outline:1px solid rgba(47, 255, 0, 0.593);
+}
+
+.bttn{
+  padding:10px;
+  width:70px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 15px rgba(12, 12, 12, 0.308);
+  border:1px solid rgba(12, 12, 12, 0.100);
+  font-weight: bold;
+  background-color: #01ad0184;
+  color: rgb(153, 153, 153);
+  margin:0 10px;
+  /*neon*/
+}
+.bttn:hover{
+  width:100%;
+  padding:12px;
+  box-shadow: 1px 1px 15px rgb(2, 150, 5);
+  border:1px solid rgba(1, 135, 6, 0.658);
+  font-weight: bold;
+  background-color: #007d00cc;
+}
+
+.danger{
+  color:rgb(255, 255, 255);
+  text-shadow: 0 0 10px rgb(255, 35, 35) , 0 0 20px rgb(213, 0, 18) , 0 0 30px rgb(213, 0, 18) , 0 0 40px #c20000 , 0 0 70px #c20000 , 0 0 80px #c20000 , 0 0 100px #c20000 ;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.img{
+  width:250px;
+}
+.imgL{
+  width:100px;
+}
+
+.label{
+  color:white;
+  font-weight:bold;
+}

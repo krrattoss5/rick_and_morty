@@ -1,6 +1,12 @@
 .container{
+  margin:130px 0 0 0;
+  padding:10px;
   display: flex;
   flex-wrap:wrap;
-  justify-content: space-around;
-  padding:0  50px 50px 50px;
+  justify-content: flex-start;
+  justify-items: center;
+}
+
+.bdy1{
+  background-color:black;
 }

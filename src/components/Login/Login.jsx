@@ -1,4 +1,9 @@
 import React, {useState} from 'react'
+import s from './Login.module.css'
+import imgC from './cabecera-log.png'
+import imgE from './email.png'
+import imgP from './pasword.png'
+import './Login.module.css'
 
 export default function Login({login}) {
   const [errors, setErrors] = useState({})
@@ -10,18 +15,20 @@ export default function Login({login}) {
     let errors = {}
     let regxE = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
     let regxP = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,10}$/i
-    if(!regxE.test(userData.email)){
-      errors.email = 'Debe ser un email!'
-    }
-    if(!userData.email.length){
-      errors.email = 'Este campo no debe estar vacio!'
-    }
-    if(userData.email.length > 35){
-      errors.email = 'Superó el numero de caracteres!'
-    }
-    if(!
-      regxP.test(userData.password)){
-      errors.email = 'La contraseña no es segura!'
+    if(userData.email.length){
+      if(userData.email.length === 0){
+        errors.email = 'Este campo no debe estar vacio!'
+      }
+      if(!regxE.test(userData.email)){
+        errors.email = 'Debe ser un email!'
+      }
+      if(userData.email.length > 35){
+        errors.email = 'Superó el numero de caracteres!'
+      }
+    }else{
+      if(!regxP.test(userData.password)){
+        errors.password = 'La contraseña no es segura!'
+      }
     }
     return errors;
   }
@@ -38,7 +45,7 @@ export default function Login({login}) {
   const err = Object.keys(errors)
   function handleSubmit(e){
     e.preventDefault()
-    if(!err.length){
+    if(err.length === 0){
       setUserData({
         ...userData,
         email:'',
@@ -54,27 +61,32 @@ export default function Login({login}) {
     return alert('Contraseña incorrecta!')
   }
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>EMAIL: </label>
+    <div className={s.container}>
+      <form className={s.form} onSubmit={handleSubmit}>
+        <img className={s.img} src={imgC} alt='rick-and-morty'/>
+        <img className={s.imgL} src={imgE} alt='rick-and-morty'/>
           <input
+            className={s.inpt}
             type='text'
             name='email'
             value={userData.email}
             onChange={handleInput}
             placeholder='Escribe un email...'
+            required
             />
-        <p className='danger'>{errors.email}</p>
-        <label>PASSWORD: </label>
+        <p className={s.danger}>{errors.email}</p>
+        <img className={s.imgL} src={imgP} alt='rick-and-morty'/>
           <input
+            className={s.inpt}
             type='password'
             name='password'
             value={userData.password}
             onChange={handleInput}
             placeholder='Escribe tu constraseña...'
+            required
             />
-        <p className='danger'>{errors.password}</p>
-        <button type='submit'>LOGIN</button>
+        <p className={s.danger}>{errors.password}</p>
+        <button className={s.bttn} type='submit'>LOGIN</button>
       </form>
     </div>
   )

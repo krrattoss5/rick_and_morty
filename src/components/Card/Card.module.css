@@ -1,16 +1,68 @@
 .container{
-  margin:10px;
+  margin:10px 25px 10px 25px;
   padding:5px;
   border-radius: 15px;
-  box-shadow: 1px 1px 15px rgba(12, 12, 12, 0.308);
-  border:1px solid rgba(12, 12, 12, 0.100);
+  box-shadow: 1px 1px 15px rgba(47, 255, 0, 0.593);
+  border:1px solid rgba(47, 255, 0, 0.1);
   position:relative;
   text-align:justify;
   width: 200px;
+  background-color: rgba(0, 100, 0, 0.221);
 }
 .container:hover{
-  box-shadow: 1px 1px 25px rgba(12, 12, 12, 0.692);
+  box-shadow: 1px 1px 25px rgba(47, 255, 0, 0.767);
+  -webkit-animation: breathing 5s ease-out infinite normal;
+  animation: breathing 5s ease-out infinite normal;
 }
+
+@-webkit-keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  25% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  60% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+@keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  25% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  60% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
 .imge{
   width:200px;
   border-radius: 10px 55px 10px 10px;
@@ -47,4 +99,25 @@
   box-shadow: 1px 1px 20px 5px rgba(107, 1, 1, 0.904);
   border:1px solid rgba(107, 1, 1, 0.623);
   cursor:pointer;
+}
+
+.fBttnR{
+  background-color: rgba(255, 255, 255, 0);
+  text-shadow:1px 1px 10px black;
+  border:0;
+  font-size:20px;
+  position:absolute;
+}
+.fBttnW{
+  background-color: rgba(255, 255, 255, 0);
+  text-shadow:1px 1px 10px red;
+  border:0;
+  font-size:20px;
+  position:absolute;
+}
+
+.link{
+  text-decoration: none;
+  text-align: center;
+  color:white;
 }

@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 import {addFav,removeFav} from '../../redux/actions/actions'
 
 function Card(props) {
-  const {id,removeFav,addFav,myFavorites,image,name,status,gender,origin,species,onClose} = props
+  const {id,removeFav,addFav,myFavorites,image,name,onClose} = props
   const [isFav,setIsFav] = useState(false)
   function handleFavorite(){
     if(isFav){
@@ -28,21 +28,17 @@ function Card(props) {
     <div className={z.container}>
       {
         isFav ? (
-            <button onClick={handleFavorite}>❤️</button>
+            <button className={z.fBttnR} onClick={handleFavorite}>❤️</button>
         ) : (
-            <button onClick={handleFavorite}>🤍</button>
+            <button className={z.fBttnW} onClick={handleFavorite}>🤍</button>
         )
       }
       <button className={z.bttn} onClick={()=>onClose(id)}>X</button>
-      <Link to={`detail/${id}`}>
+      <Link className={z.link} to={`detail/${id}`}>
         <div>
           <img className={z.imge} src={image} alt={name} />
-        </div>
         <h2>{name}</h2>
-        <p><strong>Status: </strong>{status}</p>
-        <p><strong>Species: </strong>{species}</p>
-        <p><strong>Gender: </strong>{gender}</p>
-        <p><strong>Origin: </strong>{origin?.name}</p>
+        </div>
       </Link>
     </div>
   )
