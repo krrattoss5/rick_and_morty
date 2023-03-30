@@ -1,0 +1,24 @@
+.inpt{
+  padding:8px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 15px rgba(12, 12, 12, 0.308);
+  border:1px solid rgba(12, 12, 12, 0.100);
+}
+.bttn{
+  padding:10px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 15px rgba(12, 12, 12, 0.308);
+  border:1px solid rgba(12, 12, 12, 0.100);
+  font-weight: bold;
+  background-color: black;
+  color: rgb(153, 153, 153);
+  margin:0 10px;
+}
+.bttn:hover{
+  padding:12px;
+  box-shadow: 1px 1px 15px rgba(12, 12, 12, 0.308);
+  border:1px solid rgba(12, 12, 12, 0.100);
+  font-weight: bold;
+  background-color: black;
+  color: rgb(255, 250, 250);
+}
