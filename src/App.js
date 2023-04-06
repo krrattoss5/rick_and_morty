@@ -7,6 +7,7 @@ import Detail from './components/Detail/Detail';
 import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Favorites from './components/Favorites/Favorites';
+import axios from 'axios';
 
 function App() {
   const EMAIL = 'rick@test.com'
@@ -28,6 +29,28 @@ function App() {
     navigate('/')
   }
 
+  useEffect(()=>{
+    !access && navigate('/');
+  },[access]);
+
+  useEffect(()=>{
+    const requests = [];
+
+    for (let i = 1; i < 42; i++) {
+      requests.push(
+        axios.get(`https://rickandmortyapi.com/api/character/${i}`)
+      )
+    }
+    Promise.all(requests)
+      .then(results =>{
+        let newCharacters = [];
+        results.map(
+          (chars)=>(newCharacters = [...newCharacters, ...characters.data.results])
+        );
+        setCharacters([...newCharacters])
+      })
+      .catch(error=>{})
+  },[]);
   function onSearch(id){
     fetch(`https://rickandmortyapi.com/api/character/${id}`)
     .then(res => res.json())
@@ -36,7 +59,7 @@ function App() {
         if(characters.find(ch => ch.id === data.id)){
           return alert('El personaje ya esta renderizado!')
         }else{
-          setCharacters((oldChars)=>[...oldChars, data])
+          setCharacters((oldChars)=>[data, ...oldChars])
         }
       }else{
         alert('Este id no se encuentra!')
@@ -46,9 +69,7 @@ function App() {
   function onClose(id){
     setCharacters(characters.filter(ch => ch.id !== id))
   }
-  useEffect(()=>{
-    !access && navigate('/');
-  },[access])
+
 
   return (
     <div className="App">

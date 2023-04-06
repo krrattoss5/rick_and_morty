@@ -1,0 +1,22 @@
+.container{
+  color:white;
+  padding:150px 10px 10px 30px;
+}
+.spn{
+  display: block;
+  font-family: monospace;
+}
+.spn::after{
+  font-family: monospace;
+  white-space: nowrap;
+  border-right: 4px solid;
+  animation: typing 2s infinite alternate steps(8);
+}
+
+@keyframes typing{
+  from {width:0}
+}
+
+@keyframes blink{
+  50% {border-color:transparent}
+}

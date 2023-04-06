@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import s from './Detail.module.css'
 
 
 export default function Detail() {
@@ -20,15 +21,19 @@ export default function Detail() {
   },[id])
   console.log(character)
   return (
-    <div>
-      <div>
-          <img src={character.image} alt={character.name} />
+    <div className={s.containerOut}>
+      <div className={s.container}>
+        <div>
+            <img className={s.Image} src={character.image} alt={character.name} />
+        </div>
+        <div>
+          <h2>{character.name}</h2>
+          <p><strong>Status: </strong>{character.status}</p>
+          <p><strong>Species: </strong>{character.species}</p>
+          <p><strong>Gender: </strong>{character.gender}</p>
+          <p><strong>Origin: </strong>{character.origin?.name}</p>
+        </div>
       </div>
-      <h2>{character.name}</h2>
-      <p><strong>Status: </strong>{character.status}</p>
-      <p><strong>Species: </strong>{character.species}</p>
-      <p><strong>Gender: </strong>{character.gender}</p>
-      <p><strong>Origin: </strong>{character.origin?.name}</p>
     </div>
   )
 }
