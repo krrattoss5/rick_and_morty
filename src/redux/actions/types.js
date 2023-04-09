@@ -3,3 +3,7 @@ export const REMOVE_FAV = 'REMOVE_FAV';
 export const FILTER = 'FILTER';
 export const ORDER = 'ORDER';
 export const RESET = 'RESET';
+export const ADD_CHARACTER = 'ADD_CHARACTER';
+export const REMOVE_CHARACTER = 'REMOVE_CHARACTER';
+export const NEXT = 'NEXT';
+export const PREV = 'PREV';

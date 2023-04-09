@@ -1,13 +1,19 @@
 import React from 'react'
 import Card from '../Card/Card'
+import { useSelector } from 'react-redux'
+import Pagination from '../Pagination/Pagination';
 
 
 
-export default function Cards({characters, onClose}) {
+export default function Cards({ onClose }) {
+  const {characters, numPage} = useSelector(s=>s)
+  let frm = (numPage-1) * 15;
+  let to = numPage * 15;
+  const current = characters.slice(frm,to);
   return (
     <>
       {
-        characters.map(ch =>
+        current.map(ch =>
           <Card
               onClose={onClose}
               id={ch.id}
@@ -21,6 +27,8 @@ export default function Cards({characters, onClose}) {
           />
         )
       }
+      <hr></hr>
+      <Pagination />
     </>
   )
 }
